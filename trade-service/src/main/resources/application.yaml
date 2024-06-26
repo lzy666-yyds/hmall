@@ -1,18 +1,18 @@
 server:
-  port: 8084 #1
+  port: 8085
 spring:
   application:
-    name: user-service #2
+    name: trade-service # 服务名称
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://${hm.db.host}:3306/hm-user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai #3
+    url: jdbc:mysql://${hm.db.host}:3306/hm-trade?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${hm.db.pw}
   cloud:
     nacos:
-      server-addr: 192.168.88.135:8848
+      server-addr: 192.168.88.135 # nacos地址
 mybatis-plus:
   configuration:
     default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
@@ -30,8 +30,8 @@ logging:
 knife4j:
   enable: true
   openapi:
-    title: 黑马商城用户管理接口文档 #4
-    description: "黑马商城用户管理接口文档"  #5
+    title: 交易服务接口文档
+    description: "信息"
     email: zhanghuyi@itcast.cn
     concat: 虎哥
     url: https://www.itcast.cn
@@ -41,10 +41,4 @@ knife4j:
         group-name: default
         api-rule: package
         api-rule-resources:
-          - com.hmall.user.controller #6
-hm:
-  jwt:
-    location: classpath:hmall.jks
-    alias: hmall
-    password: hmall123
-    tokenTTL: 30m
+          - com.hmall.trade.controller

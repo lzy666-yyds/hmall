@@ -1,7 +1,7 @@
 package com.hmall.cart;
 
 
-import com.config.DefaultFeignConfig;
+import com.hmall.api.config.DefaultFeignConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
